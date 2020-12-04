@@ -10,9 +10,9 @@ for (let i = 0; i < expenses.length; i++) {
     for (let j = 0; j < expenses.length; j++) {
         b = expenses[j]
         if (a + b === 2020) {
-            console.log("IN the loop a is: ", a);
-            console.log("In the loop b is: ", b);
-            console.log("In the loop a + b = ", a + b);
+            console.log("The first value is: ", a);
+            console.log("The second value is: ", b);
+            console.log("The sum of a + b = ", a + b);
             x = a * b;
             console.log("day 1 result = ", x);
            
