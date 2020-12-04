@@ -1,0 +1,15 @@
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    background-color: rgb(122, 128, 114);
+    box-shadow: 3px 3px 15px darksalmon;
+    padding: 20px;
+}
+
+.day {
+    border: rgb(75, 75, 75) ridge 4px;
+    padding: 15px 5vw;
+}
