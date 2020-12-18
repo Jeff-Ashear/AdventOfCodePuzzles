@@ -1,7 +1,7 @@
 const fs = require('fs')
 
-const data = fs.readFileSync('../data/day3input.txt', 'utf8')
-const map = data.split('\n')
+const d3Data = fs.readFileSync('../data/day3input.txt', 'utf8')
+const map = d3Data.split('\n')
 
 let example = [
     "..##.......",
@@ -37,8 +37,9 @@ function treesEncountered(terrainMap) {
             position -= terrain.length
         }
     }
-
+    
     console.log("Trees encountered: ", trees);
 }
 
 treesEncountered(map);
+$('#day3Result').text(trees + ' were encountered on the descent.');
