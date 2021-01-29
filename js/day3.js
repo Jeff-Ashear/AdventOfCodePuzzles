@@ -1,4 +1,4 @@
-const fs = require('fs')
+var fs = require('fs')
 
 const d3Data = fs.readFileSync('../data/day3input.txt', 'utf8')
 const map = d3Data.split('\n')

@@ -23,27 +23,15 @@ function countValidPasswords(passwordPolicies) {
         let [minimum, maximum] = range.split("-").map(Number)
         if (matchingChars >= minimum && matchingChars <= maximum) {
             count += 1
+            $("#day2Result").text("What about this?");
+            // $("#day2Result").text("Number of Valid Passwords: " + count);
         }
+        // $("#day2Result").html('<h3>Day 2 Part 1</h3><br><h3>Number of Valid Passwords: ' + count + '</h3>');
     }
     return count
 }
 
- function verifyLetterPositions(passwordPolicies) {
-     let recount = 0;
-     for (let i = 0; i < passwordPolicies.length; i++) {
-         let passwordPolicy = passwordPolicies[i]
-         let [positions, characterAndColon, password] = passwordPolicy.split(" ")
-         let [position1, position2] = positions.split("-")
-         let requiredChar = characterAndColon[0]
-
-        if (requiredChar == password[position1 - 1] && requiredChar !== password[position2 - 1]  || requiredChar !== password[position1 - 1] && requiredChar == password[position2 - 1]) {
-            recount++
-        }
-     }
-     return recount
- }
-
 const day2Data = fs.readFileSync('../data/day2Input.txt', 'utf8')
 const passwordList = day2Data.split("\n")
+countValidPasswords(passwordList);
 console.log("Number of Valid Passwords: ", countValidPasswords(passwordList))
-console.log("Number of New Valid Passwords: ", verifyLetterPositions(passwordList))
