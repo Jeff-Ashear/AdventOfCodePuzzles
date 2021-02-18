@@ -14,7 +14,7 @@ console.log(positionCheck2)
 let correct = true
 
 function checkPositions(passwordPolicies) {
-    if (requiredChar !== positionCheck1) {
+    if (requiredChar !== positionCheck1 {
         correct = true
     } else {
         correct = false
