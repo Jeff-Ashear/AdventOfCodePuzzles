@@ -1,18 +1,52 @@
 function reducer(array, func, init) {
     let result = 0
-    result = 0
-    if (!init) {
-        init = array[0]
-        result = result + init
-        for (i = 1; i < array.length; i++) {
-            result = func(result, array[i])
+    if (typeof (array[0] == Number)) {
+        result = 0
+        console.log(typeof(array[0]))
+        if (!init) {
+            init = array[0]
+            result = result + init
+            for (i = 1; i < array.length; i++) {
+                result = func(result, array[i])
+            }
+        } else {
+            result = result + init
+            for (let i = 0; i < array.length; i++) {
+                result = func(result, array[i])
+            }
         }
-    } else {
-    result = result + init
-    for (let i = 0; i < array.length; i++) {
-        result = func(result, array[i])       
+
+    } else if (typeof (array[0] == String)) {
+        result = ""
+        if (!init) {
+            init = array[0]
+            console.log(init)
+            result = result + init
+            for (i = 1; i < array.length; i++) {
+                result = func(result, array[i])
+            }
+        } else {
+            result = result + init
+            for (let i = 0; i < array.length; i++) {
+                result = func(result, array[i])
+            }
+        }
+
     }
-    }
+
+    // console.log(typeof (array[0]))
+    // if (!init) {
+    //     init = array[0]
+    //     result = result + init
+    //     for (i = 1; i < array.length; i++) {
+    //         result = func(result, array[i])
+    //     }
+    // } else {
+    //     result = result + init
+    //     for (let i = 0; i < array.length; i++) {
+    //         result = func(result, array[i])
+    //     }
+    // }
     return result
 }
 
@@ -47,10 +81,13 @@ function reducer(array, func, init) {
 // console.log('9a. divide, no initial value', [20, 5, 2].reduce((acc, val) => {return acc / val}))
 // console.log('9b: divide, no initVal: ', reducer([20, 5, 2], (acc, val) => acc / val))
 
-console.log("10a. with initial value: ", ["a", "b", "c"].reduce((acc, val) =>  acc + val))
-console.log("10b. with initial value: ", (reducer(["a", "b", "c"], (acc, val) => acc + val)))
+console.log("10a. without initial value: ", ["a", "b", "c"].reduce((acc, val) => acc + val))
+console.log("10b. without initial value: ", (reducer(["a", "b", "c"], (acc, val) => acc + val)))
 
+// console.log("11a. with initial value: ", )
 
+// console.log("12a. without initial value: ", [[], 1, 2, 3].reduce( (acc, val) => { acc.push(val) ; return acc }))
+// console.log("12b. without initial value: ", (reducer([[], 1, 2, 3], ( (acc, val) => {acc.push(val); return acc} ))))
 // console.log(
 //     [0, 1, 2, 3, 4].reduce((accumulator, currentValue) => {
 //         return accumulator + currentValue
