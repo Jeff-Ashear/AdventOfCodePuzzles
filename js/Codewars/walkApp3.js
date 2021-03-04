@@ -5,13 +5,26 @@ function isValidWalk(walk) {
 
     if (walk.length == 10) {
         for (let i = 0; i < walk.length; i++) {
-            if (walk[i] == "n" || walk[i] == "e") {
-                blocks = blocks + 1
-            } else {
-                blocks = blocks - 1
+            switch(walk[i]) {
+                case "n":
+                    blocksNS++;
+                    break;
+                
+                case "s":
+                    blocksNS--;
+                    break;
+                
+                case "e":
+                    blocksEW++;
+                    break;
+                
+                case "w":
+                    blocksEW--;
+                    break;
+                default: console.log(blocksNS, blocksEWs)
             }
         }
-        if (blocks === 0) {
+        if (blocksNS === 0 && blocksEW === 0) {
             validWalk = true
         }
     }
