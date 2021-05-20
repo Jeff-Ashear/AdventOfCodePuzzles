@@ -24,6 +24,8 @@
 
 // function validParentheses(parens){
 //     var re = /\(\)/;
+//     // let re = RegExp.new("()")
+//     parens = "()"
 //     while (re.test(parens)) parens = parens.replace(re, "");
 //     return !parens;
 //   }
@@ -32,9 +34,9 @@ function validParentheses(parens) {
     let parenCounter = 0
     for(let i = 0; i < parens.length; i++) {
         if (parens[i] === "(") {
-            parenCounter ++
+            parenCounter++
         } else if (parens[i] === ")") {
-            parenCounter --
+            parenCounter--
         }
         if (parenCounter < 0) {
             return false
