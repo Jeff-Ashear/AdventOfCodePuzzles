@@ -1,0 +1,1 @@
+//make a class called user with a method for calculating and storing rank progression
